@@ -1,0 +1,17 @@
+version: '3'
+services:
+  create_repo:
+    image: create_repo:0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: create_repo
+    environment:
+      NAME: ${NAME}
+      PRIVATE: ${PRIVATE}
+    env_file:
+      - creds.env
+    volumes:
+      - type: bind
+        source: ./.secret
+        target: /mnt/.secret

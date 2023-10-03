@@ -1,0 +1,6 @@
+**.sw[opn]
+__pycache__/**
+*.csv
+*.env
+.secret
+.DS_Store

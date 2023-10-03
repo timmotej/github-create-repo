@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+name=$1
+private=${2:-true}
+user=${3:-$USER}
+# get current dir
+directory=$(pwd)
+# change dir to this directory
+exec_dir=$(dirname $(which gh_create_repo))
+cd "$exec_dir"
+# create repo with name passed as arg
+docker-compose create create_repo --build
+docker-compose run create_repo python main.py --user=$user --name=$name --private=$private
+docker-compose down
+cd "$directory"
+# initialize git in directory if not present
+if ! [[ -d .git ]]; then
+    git init
+fi
+# set up remote origin if not present
+if ! git remote -v | grep "github.com"; then
+    git remote add origin git@github.com:$user/$name.git
+fi
