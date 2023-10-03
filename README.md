@@ -21,10 +21,10 @@
 1. Add API key to `.secret` file in repository
 2. Set up `creds.env` with env vars:
     ```bash
-    USER="timmotej"
+    USER="<github user name>"
     TOKEN_FILE="/mnt/.secret"
-    NAME="reponame"
-    PRIVATE="true"
+    NAME="<github new repo name>"
+    PRIVATE="<true|false>"
     ```
 3. Execute:
     ```bash
