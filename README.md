@@ -25,6 +25,7 @@
     TOKEN_FILE="/mnt/.secret"
     NAME="<github new repo name>"
     PRIVATE="<true|false>"
+    DESCRIPTION="<some description of your repo>"
     ```
 3. Execute:
     ```bash
