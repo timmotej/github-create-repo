@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+echo "Usage: $0 reponame user private[true/false]"
+
 name=$1
-private=${2:-true}
-user=${3:-$USER}
+user=${2:-$USER}
+private=${3:-true}
 # get current dir
 directory=$(pwd)
 # change dir to this directory
